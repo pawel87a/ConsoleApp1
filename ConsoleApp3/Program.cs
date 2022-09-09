@@ -19,7 +19,7 @@ public class Program
         {
             Account.Transfer(account1, account2, -100);
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             Console.WriteLine(ex);
         }

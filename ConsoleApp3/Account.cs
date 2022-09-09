@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp3
 {
-    public class Account
+    public class Account : IComparable<Account>
     {
         public string Id { get; }
         public decimal Balance { get; set; }
@@ -45,6 +45,17 @@ namespace ConsoleApp3
         public override string ToString()
         {
             return $"ID: {Id} Balance: {Balance}";
+        }
+
+        //masz porownac this do other
+        //jak this > other to zwroc wartosc dodatnia
+        //jak this < other to zwroc wartosc ujemna
+        //jak this takie samo co do wielkosci jak other to zwroc 0
+
+
+        public int CompareTo(Account other)
+        {
+            return decimal.Compare(Balance, other.Balance);
         }
     }
 }
