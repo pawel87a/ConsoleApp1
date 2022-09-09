@@ -14,7 +14,15 @@ public class Program
         Console.WriteLine(Account.Transfer(account1, account2, 600));
         Console.WriteLine(Account.Transfer(account1, account2, 50));
         Console.WriteLine(account1);
-        Console.WriteLine(account2); 
+        Console.WriteLine(account2);
+        try
+        {
+            Account.Transfer(account1, account2, -100);
+        }
+        catch(Exception ex)
+        {
+            Console.WriteLine(ex);
+        }
     }
 
 }
